@@ -14,7 +14,6 @@ function parseResponseJSON(response) {
 
 export default function apiFetch(endpoint, options) {
   const url = `${config.domain}:${config.port}/api/${endpoint}`;
-  log(url);
   return fetch(url, options)
     .then(parseResponseJSON)
     .then(checkResponseSuccess);
