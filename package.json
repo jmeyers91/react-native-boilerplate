@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:server": "node server",
     "start:ios": "react-native run-ios",
+    "start:android": "react-native run-android",
     "generate": "plop",
     "test": "jest",
     "postinstall": "./scripts/createConfig.sh"
