@@ -1,4 +1,5 @@
 {
+  "domain": "http://localhost",
   "production": true,
   "port": 8070
 }

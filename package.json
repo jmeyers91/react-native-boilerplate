@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start:server": "node server",
     "start:ios": "react-native run-ios",
     "generate": "plop",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "./scripts/createConfig.sh"
   },
   "dependencies": {
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
+    "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "nconf": "^0.8.4",
     "react": "~15.4.0",

@@ -1,3 +1,5 @@
+import config from "./config";
+
 function checkResponseSuccess(data) {
   if(data.success) {
     return data.body;
@@ -11,7 +13,9 @@ function parseResponseJSON(response) {
 }
 
 export default function apiFetch(endpoint, options) {
-  return fetch(`http://localhost:8070/api/${endpoint}`, options)
+  const url = `${config.domain}:${config.port}/api/${endpoint}`;
+  log(url);
+  return fetch(url, options)
     .then(parseResponseJSON)
     .then(checkResponseSuccess);
 }
