@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles';
 import replaceWhere from '../../utils/replaceWhere';
+import apiFetch from '../../apiFetch';
 import {
   Text,
   View,
@@ -18,6 +19,7 @@ export default class Application extends Component {
   handleUpdateNewTaskText = (newTaskText) => {
     this.setState({newTaskText});
   };
+
   handleCreateTask = () => {
     const {newTaskText, tasks} = this.state;
     const task = {
@@ -30,6 +32,7 @@ export default class Application extends Component {
       tasks: [task, ...tasks]
     });
   };
+
   handleToggleTask = (taskId) => {
     const {tasks} = this.state;
     this.setState({
@@ -42,6 +45,13 @@ export default class Application extends Component {
       )
     })
   };
+
+  componentDidMount() {
+    apiFetch("foo")
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  }
+
   render() {
     const {newTaskText, tasks} = this.state;
     const {tasksDataSource} = this;
